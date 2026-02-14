@@ -3930,6 +3930,78 @@
     .defender-toggle.off {
       background: linear-gradient(135deg, #888888 0%, #555555 100%);
     }
+
+        /* Адаптивность для мобильных устройств (меньше 768px) */
+    @media (max-width: 768px) {
+      
+      /* 1. Скрываем часы на мобильных */
+      .lego-clock {
+        display: none;
+      }
+
+      /* 2. Скрываем и останавливаем анимацию QR-кода на мобильных */
+      .qr-code-container {
+        display: none;
+        animation-play-state: paused;
+      }
+
+      /* 3. Настраиваем Header: перестраиваем на колонку */
+      .header {
+        padding: 20px 15px;
+        min-height: auto; /* Убираем жесткую высоту */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Выравниваем по верху */
+        align-items: center;
+        gap: 15px; /* Отступы между элементами */
+      }
+
+      /* Убираем лишние отступы у контента шапки */
+      .header-content {
+        text-align: center;
+        width: 100%;
+        order: 2; /* Контент размещаем ниже лого */
+      }
+
+      /* Лого размещаем первым */
+      #logo {
+        margin: 0;
+        order: 1;
+      }
+
+      /* 4. Кнопки Shorts выравниваем по центру внизу и растягиваем */
+      .shorts-block {
+        position: static; /* Убираем абсолютное позиционирование */
+        width: 100%;
+        margin-top: 10px;
+        order: 3; /* Размещаем кнопки самым нижним блоком в шапке */
+      }
+
+      .shorts-title {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .shorts-buttons {
+        display: flex;
+        justify-content: center; /* Центрируем кнопки */
+        width: 100%;
+        gap: 10px;
+      }
+
+      .shorts-btn {
+        flex: 1; /* Кнопки растягиваются на всю доступную ширину поровну */
+        justify-content: center;
+        padding: 12px 10px;
+        font-size: 0.9rem;
+      }
+
+      /* Небольшая корректировка сетки карточек для удобства */
+      .categories-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 <body>
